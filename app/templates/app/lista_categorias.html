@@ -1,0 +1,23 @@
+{% extends "app/base.html" %}
+{% block contenido %}
+    <h3>Gestion categorias</h3>
+    <h2>Editar categorias</h2>
+    <a href="{% url 'crear_categoria' %}">Crear nueva</a>
+    <table class="table table-striped">
+        <thead>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+        </thead>
+        {% for categoria in object_list %}
+            <tr>
+                <td>{{ categoria.nombre }} </td>
+                <td>{{ categoria.descripcion }} </td>
+                <td><a href="{% url 'editar_categoria' categoria.id %}">Editar</a></td>
+                <td><a href="{% url 'eliminar_categoria' categoria.id %}">Eliminar</a></td>
+            </tr>
+
+        {% endfor %}
+    </table>
+{% endblock %}

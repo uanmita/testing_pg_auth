@@ -8,4 +8,4 @@ def test_homepage_latency(client):
     response = client.get(reverse('lista_productos'))
     duration = time.time() - start
     assert response.status_code == 200
-    assert duration < 0.1 # menos de 100 ms
+    assert duration < 0.01 # menos de 100 ms

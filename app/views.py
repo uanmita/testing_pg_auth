@@ -27,6 +27,7 @@ class CategoriaDeleteView(DeleteView):
 class ProductoListView(ListView):
     model = Producto
     template_name = 'app/lista.html'
+    reverse_lazy= ('lista_productos')
 
 class ProductoCreateView(CreateView):
     model = Producto
